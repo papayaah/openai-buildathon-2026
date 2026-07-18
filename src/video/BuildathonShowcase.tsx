@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AbsoluteFill,
+  Loop,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -236,17 +237,21 @@ const BeforeAfter: React.FC = () => (
       <div style={{ display: "flex", gap: 40, height: 850, marginTop: 34, justifyContent: "center" }}>
         <div style={{ width: 478 }}>
           <VideoCard label="Before · Game capture">
-            <OffthreadVideo
-              src={staticFile("video/cannon-attack-capture.mp4")}
-              muted
-              style={{ width: "100%", height: "100%", objectFit: "cover", imageRendering: "pixelated" }}
-            />
+            <Loop durationInFrames={100}>
+              <OffthreadVideo
+                src={staticFile("video/cannon-attack-capture.mp4")}
+                muted
+                style={{ width: "100%", height: "100%", objectFit: "cover", imageRendering: "pixelated" }}
+              />
+            </Loop>
           </VideoCard>
         </div>
         <div style={{ alignSelf: "center", color: colors.orange, fontFamily: display, fontSize: 74 }}>→</div>
         <div style={{ width: 478 }}>
           <VideoCard label="After · Remotion Short" accent={colors.orange}>
-            <CannonAttackShort />
+            <Loop durationInFrames={100}>
+              <CannonAttackShort />
+            </Loop>
           </VideoCard>
         </div>
         <div style={{ width: 480, alignSelf: "center", paddingLeft: 20 }}>
