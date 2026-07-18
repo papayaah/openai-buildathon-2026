@@ -6,15 +6,17 @@ Codex helped me create a repeatable workflow for capturing a deterministic canno
 
 ## Watch the Short
 
-[![Hero's Bounty cannon attack YouTube Short](media/cannon-attack-preview.gif)](out/cannon-attack-short.mp4)
+[![Hero's Bounty cannon attack YouTube Short](media/cannon-attack-preview.gif)](https://youtube.com/shorts/Lyd-eJqWnek)
 
-Click the animated preview to play the full-quality MP4.
+Click the animated preview to watch the published YouTube Short.
 
 ## Videos
 
-- **Finished YouTube Short:** [`out/cannon-attack-short.mp4`](out/cannon-attack-short.mp4)
+- **Published YouTube Short:** [Watch on YouTube](https://youtube.com/shorts/Lyd-eJqWnek)
+- **Build-a-thon showcase:** [Watch the submission demo on Google Drive](https://drive.google.com/file/d/1iMHhBxcd0b7VUmiY0dgVdIwFhd_-SplL/view?usp=drive_link)
+- **Rendered Short:** [Watch the full-quality MP4 on Google Drive](https://drive.google.com/file/d/1ysBwuku1fD4Yk-rzdyq0pV7LjnaJOepW/view?usp=drive_link)
+- **Repository renders:** [`cannon-attack-short.mp4`](out/cannon-attack-short.mp4) · [`buildathon-showcase.mp4`](out/buildathon-showcase.mp4)
 - **Raw gameplay capture:** [`public/video/cannon-attack-capture.mp4`](public/video/cannon-attack-capture.mp4)
-- **Build-a-thon showcase:** [`out/buildathon-showcase.mp4`](out/buildathon-showcase.mp4) explains the workflow and presents the final result.
 
 ## Run locally
 
@@ -27,7 +29,7 @@ npm run preview
 
 Open either composition in Remotion Studio:
 
-- `CannonAttackShort` — the 11-second vertical video
+- `CannonAttackShort` — the 11.6-second vertical video
 - `BuildathonShowcase` — the 53-second submission walkthrough
 
 ## Render

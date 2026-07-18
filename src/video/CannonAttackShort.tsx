@@ -19,12 +19,12 @@ const AIM_EXTENSION = AIM_OUTPUT_FRAMES - AIM_SOURCE_FRAMES;
 const afterSlowAim = (sourceFrame: number) => sourceFrame + AIM_EXTENSION;
 
 const actionWords: ActionWord[] = [
-  { start: afterSlowAim(31), duration: 22, text: "THOOM!", x: 670, y: 190, color: "#ffef83", burst: "#d9552f", rotate: -8, scale: 0.78 },
-  { start: afterSlowAim(56), duration: 28, text: "KABOOM!", x: 565, y: 610, color: "#ff4a2f", burst: "#fff09a", rotate: 6 },
+  { start: afterSlowAim(30), duration: 22, text: "THOOM!", x: 670, y: 190, color: "#ffef83", burst: "#d9552f", rotate: -8, scale: 0.78 },
+  { start: afterSlowAim(97), duration: 28, text: "KABOOM!", x: 565, y: 610, color: "#ff4a2f", burst: "#fff09a", rotate: 6 },
   { start: afterSlowAim(124), duration: 22, text: "BLAM!", x: 680, y: 190, color: "#fff1a1", burst: "#d45a31", rotate: 8, scale: 0.76 },
-  { start: afterSlowAim(207), duration: 28, text: "WHUMP!", x: 520, y: 1010, color: "#f16431", burst: "#ffe997", rotate: -5, scale: 0.92 },
-  { start: afterSlowAim(217), duration: 22, text: "KRAK!", x: 665, y: 190, color: "#fff0a0", burst: "#c94a2d", rotate: -7, scale: 0.76 },
-  { start: afterSlowAim(282), duration: 30, text: "KRA-KOOM!", x: 555, y: 1430, color: "#f0442b", burst: "#fff09a", rotate: 5, scale: 1.05 },
+  { start: afterSlowAim(168), duration: 28, text: "WHUMP!", x: 520, y: 1010, color: "#f16431", burst: "#ffe997", rotate: -5, scale: 0.92 },
+  { start: afterSlowAim(218), duration: 22, text: "KRAK!", x: 665, y: 190, color: "#fff0a0", burst: "#c94a2d", rotate: -7, scale: 0.76 },
+  { start: afterSlowAim(265), duration: 30, text: "KRA-KOOM!", x: 555, y: 1430, color: "#f0442b", burst: "#fff09a", rotate: 5, scale: 1.05 },
 ];
 
 const ComicWord: React.FC<ActionWord & { frame: number }> = ({
