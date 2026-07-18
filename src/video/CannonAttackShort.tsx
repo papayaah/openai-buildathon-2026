@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, OffthreadVideo, interpolate, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
 
 interface ActionWord {
   start: number;
@@ -13,13 +13,18 @@ interface ActionWord {
   scale?: number;
 }
 
+const AIM_SOURCE_FRAMES = 18;
+const AIM_OUTPUT_FRAMES = 36;
+const AIM_EXTENSION = AIM_OUTPUT_FRAMES - AIM_SOURCE_FRAMES;
+const afterSlowAim = (sourceFrame: number) => sourceFrame + AIM_EXTENSION;
+
 const actionWords: ActionWord[] = [
-  { start: 18, duration: 22, text: "THOOM!", x: 670, y: 190, color: "#ffef83", burst: "#d9552f", rotate: -8, scale: 0.78 },
-  { start: 66, duration: 28, text: "KABOOM!", x: 565, y: 610, color: "#ff4a2f", burst: "#fff09a", rotate: 6 },
-  { start: 126, duration: 22, text: "BLAM!", x: 680, y: 190, color: "#fff1a1", burst: "#d45a31", rotate: 8, scale: 0.76 },
-  { start: 174, duration: 28, text: "WHUMP!", x: 520, y: 1010, color: "#f16431", burst: "#ffe997", rotate: -5, scale: 0.92 },
-  { start: 216, duration: 22, text: "KRAK!", x: 665, y: 190, color: "#fff0a0", burst: "#c94a2d", rotate: -7, scale: 0.76 },
-  { start: 264, duration: 30, text: "KRA-KOOM!", x: 555, y: 1430, color: "#f0442b", burst: "#fff09a", rotate: 5, scale: 1.05 },
+  { start: afterSlowAim(31), duration: 22, text: "THOOM!", x: 670, y: 190, color: "#ffef83", burst: "#d9552f", rotate: -8, scale: 0.78 },
+  { start: afterSlowAim(56), duration: 28, text: "KABOOM!", x: 565, y: 610, color: "#ff4a2f", burst: "#fff09a", rotate: 6 },
+  { start: afterSlowAim(124), duration: 22, text: "BLAM!", x: 680, y: 190, color: "#fff1a1", burst: "#d45a31", rotate: 8, scale: 0.76 },
+  { start: afterSlowAim(207), duration: 28, text: "WHUMP!", x: 520, y: 1010, color: "#f16431", burst: "#ffe997", rotate: -5, scale: 0.92 },
+  { start: afterSlowAim(217), duration: 22, text: "KRAK!", x: 665, y: 190, color: "#fff0a0", burst: "#c94a2d", rotate: -7, scale: 0.76 },
+  { start: afterSlowAim(282), duration: 30, text: "KRA-KOOM!", x: 555, y: 1430, color: "#f0442b", burst: "#fff09a", rotate: 5, scale: 1.05 },
 ];
 
 const ComicWord: React.FC<ActionWord & { frame: number }> = ({
@@ -97,25 +102,43 @@ const ComicWord: React.FC<ActionWord & { frame: number }> = ({
 
 export const CannonAttackShort: React.FC = () => {
   const frame = useCurrentFrame();
-  const aimingOpacity = interpolate(frame, [0, 3, 12, 18], [0, 1, 1, 0], {
+  const aimingOpacity = interpolate(frame, [0, 5, 28, AIM_OUTPUT_FRAMES], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
   return (
     <AbsoluteFill style={{ background: "#05070b", overflow: "hidden" }}>
-      <OffthreadVideo
-        src={staticFile("video/cannon-attack-capture.mp4")}
-        volume={0}
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          imageRendering: "pixelated",
-        }}
-      />
+      <Sequence durationInFrames={AIM_OUTPUT_FRAMES}>
+        <OffthreadVideo
+          src={staticFile("video/cannon-attack-capture.mp4")}
+          playbackRate={0.5}
+          volume={0}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            imageRendering: "pixelated",
+          }}
+        />
+      </Sequence>
+      <Sequence from={AIM_OUTPUT_FRAMES}>
+        <OffthreadVideo
+          src={staticFile("video/cannon-attack-capture.mp4")}
+          trimBefore={AIM_SOURCE_FRAMES}
+          volume={0}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            imageRendering: "pixelated",
+          }}
+        />
+      </Sequence>
 
       <div
         style={{
@@ -144,7 +167,7 @@ export const CannonAttackShort: React.FC = () => {
           zIndex: 3,
         }}
       >
-        TAKING AIM…
+        KRRR-CLANK!
       </div>
 
       {actionWords.map((word) => (

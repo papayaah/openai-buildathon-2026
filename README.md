@@ -14,7 +14,7 @@ Click the animated preview to play the full-quality MP4.
 
 - **Finished YouTube Short:** [`out/cannon-attack-short.mp4`](out/cannon-attack-short.mp4)
 - **Raw gameplay capture:** [`public/video/cannon-attack-capture.mp4`](public/video/cannon-attack-capture.mp4)
-- **Build-a-thon showcase:** the `BuildathonShowcase` Remotion composition explains the workflow and presents the final result.
+- **Build-a-thon showcase:** [`out/buildathon-showcase.mp4`](out/buildathon-showcase.mp4) explains the workflow and presents the final result.
 
 ## Run locally
 
