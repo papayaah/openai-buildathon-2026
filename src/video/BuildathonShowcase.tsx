@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AbsoluteFill,
-  Loop,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -134,6 +133,22 @@ const VideoCard: React.FC<{ label: string; children: React.ReactNode; accent?: s
   </div>
 );
 
+const ScaledCannonShort: React.FC<{ width: number }> = ({ width }) => (
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: 1080,
+      height: 1920,
+      transform: `scale(${width / 1080})`,
+      transformOrigin: "top left",
+    }}
+  >
+    <CannonAttackShort />
+  </div>
+);
+
 const RawCapture: React.FC = () => (
   <Fade duration={330}>
     <AbsoluteFill style={{ padding: "76px 110px 72px" }}>
@@ -237,21 +252,17 @@ const BeforeAfter: React.FC = () => (
       <div style={{ display: "flex", gap: 40, height: 850, marginTop: 34, justifyContent: "center" }}>
         <div style={{ width: 478 }}>
           <VideoCard label="Before · Game capture">
-            <Loop durationInFrames={100}>
-              <OffthreadVideo
-                src={staticFile("video/cannon-attack-capture.mp4")}
-                muted
-                style={{ width: "100%", height: "100%", objectFit: "cover", imageRendering: "pixelated" }}
-              />
-            </Loop>
+            <OffthreadVideo
+              src={staticFile("video/cannon-attack-capture.mp4")}
+              muted
+              style={{ width: "100%", height: "100%", objectFit: "cover", imageRendering: "pixelated" }}
+            />
           </VideoCard>
         </div>
         <div style={{ alignSelf: "center", color: colors.orange, fontFamily: display, fontSize: 74 }}>→</div>
         <div style={{ width: 478 }}>
           <VideoCard label="After · Remotion Short" accent={colors.orange}>
-            <Loop durationInFrames={100}>
-              <CannonAttackShort />
-            </Loop>
+            <ScaledCannonShort width={478} />
           </VideoCard>
         </div>
         <div style={{ width: 480, alignSelf: "center", paddingLeft: 20 }}>
@@ -286,7 +297,7 @@ const FinalShort: React.FC = () => (
       </div>
       <div style={{ width: 552, height: 982, marginLeft: 530 }}>
         <VideoCard label="Final YouTube Short" accent={colors.orange}>
-          <CannonAttackShort />
+          <ScaledCannonShort width={552} />
         </VideoCard>
       </div>
     </AbsoluteFill>
