@@ -1,6 +1,6 @@
-# MiniDefense YouTube Short — OpenAI Build-a-thon 2026
+# Hero's Bounty YouTube Short — OpenAI Build-a-thon 2026
 
-This project shows how I used Codex to turn a real gameplay moment from my Phaser game, MiniDefense, into a polished vertical YouTube Short with Remotion.
+This project shows how I used Codex to turn a real gameplay moment from my Phaser game, Hero's Bounty, into a polished vertical YouTube Short with Remotion.
 
 Codex helped me create a repeatable workflow for capturing a deterministic cannon attack, formatting it for a 1080 × 1920 canvas, iterating on timing in Remotion Studio, adding comic-book impact words, and rendering the finished video.
 
@@ -35,7 +35,7 @@ Rendered videos are written to `out/`.
 
 ## Workflow
 
-1. Capture the cannon attack from MiniDefense as portrait gameplay footage.
+1. Capture the cannon attack from Hero's Bounty as portrait gameplay footage.
 2. Load the capture into a frame-accurate Remotion composition.
 3. Time comic action words to firing and impact moments.
 4. Preview changes instantly in Remotion Studio.
@@ -46,4 +46,4 @@ Rendered videos are written to `out/`.
 - OpenAI Codex
 - Remotion
 - React and TypeScript
-- Phaser gameplay footage from MiniDefense
+- Phaser gameplay footage from Hero's Bounty

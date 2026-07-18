@@ -66,7 +66,7 @@ const Intro: React.FC = () => {
     <Fade duration={150}>
       <AbsoluteFill style={{ justifyContent: "center", padding: "0 150px" }}>
         <div style={{ transform: `translateY(${(1 - enter) * 45}px)`, opacity: enter }}>
-          <Eyebrow>Codex Build-a-thon · MiniDefense</Eyebrow>
+          <Eyebrow>Codex Build-a-thon · Hero's Bounty</Eyebrow>
           <div
             style={{
               marginTop: 22,
@@ -299,7 +299,7 @@ const Outro: React.FC = () => {
           Capture. Iterate. Render.
         </div>
         <div style={{ marginTop: 24, color: colors.muted, fontFamily: font, fontSize: 31 }}>
-          MiniDefense cannon showcase · Phaser + Remotion
+          Hero's Bounty cannon showcase · Phaser + Remotion
         </div>
         <div style={{ marginTop: 44, color: colors.cyan, fontFamily: "monospace", fontSize: 27 }}>
           npm run video:render:buildathon
