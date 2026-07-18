@@ -1,0 +1,20 @@
+{
+  "name": "openai-buildathon-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "remotion studio src/video/Root.tsx",
+    "typecheck": "tsc --noEmit",
+    "render:short": "remotion render src/video/Root.tsx CannonAttackShort out/cannon-attack-short.mp4",
+    "render:showcase": "remotion render src/video/Root.tsx BuildathonShowcase out/buildathon-showcase.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.482",
+    "@types/react": "^19.2.17",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remotion": "^4.0.482",
+    "typescript": "~6.0.2"
+  }
+}
