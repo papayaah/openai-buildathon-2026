@@ -4,6 +4,12 @@ This project shows how I used Codex to turn a real gameplay moment from my Phase
 
 Codex helped me create a repeatable workflow for capturing a deterministic cannon attack, formatting it for a 1080 × 1920 canvas, iterating on timing in Remotion Studio, adding comic-book impact words, and rendering the finished video.
 
+## Watch the Short
+
+[![Hero's Bounty cannon attack YouTube Short](media/cannon-attack-preview.gif)](out/cannon-attack-short.mp4)
+
+Click the animated preview to play the full-quality MP4.
+
 ## Videos
 
 - **Finished YouTube Short:** [`out/cannon-attack-short.mp4`](out/cannon-attack-short.mp4)
